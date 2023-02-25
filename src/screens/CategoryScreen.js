@@ -10,7 +10,7 @@ const CartegoryScreen = () => {
       <CategorySection/>
       <Footer />
     </div>
-  );
+  ); 
 };
 
 export default CartegoryScreen;

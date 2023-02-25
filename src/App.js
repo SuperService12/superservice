@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import "./my.css";
 import "./responsive.css";
@@ -8,7 +8,7 @@ import HomeScreen from "./screens/HomeScreen";
 import CategoryScreen from "./screens/CategoryScreen";
 import SingleProduct from "./screens/SingleProduct";
 import Login from "./screens/Login";
-import Register from "./screens/Register"; 
+import Register from "./screens/Register";
 import CartScreen from "./screens/CartScreen";
 import ShippingScreen from "./screens/ShippingScreen";
 import ProfileScreen from "./screens/ProfileScreen";
@@ -18,7 +18,17 @@ import OrderScreen from "./screens/OrderScreen";
 import NotFound from "./screens/NotFound";
 import PrivateRouter from "./PrivateRouter";
 
+import { useDispatch } from "react-redux";
+import { listCategory } from "./Redux/Actions/ProductActions";
+
 const App = () => {
+
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    dispatch(listCategory());
+  }, [dispatch]);
+
   return (
     <Router>
       <Switch>

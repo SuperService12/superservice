@@ -1,12 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { listCategory } from "../../Redux/Actions/ProductActions";
+import { useSelector } from "react-redux";
 import Loading from "../LoadingError/Loading";
 import Message from "../LoadingError/Error";
 
 const CategorySection = (props) => {
-  const dispatch = useDispatch();
   const sideNav = useRef(null);
 
   // const catie = {
@@ -16,9 +14,6 @@ const CategorySection = (props) => {
   const productList = useSelector((state) => state.categoryList);
   const { loading, error, categories } = productList;
 
-  useEffect(() => {
-    dispatch(listCategory());
-  }, [dispatch]);
   return (
     <>
       <div ref={sideNav} id="mySidenav" class="sidenav">
