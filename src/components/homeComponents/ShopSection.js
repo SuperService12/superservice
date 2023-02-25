@@ -67,7 +67,7 @@ const ShopSection = (props) => {
                               value={product.rating || product.description.split(' ')[0]}
                               text={`${product.numReviews || product.description.split(' ')[1]} reviews`}
                             />
-                            <h3>${product.price}</h3>
+                            <h3>₹{product.price}</h3>
                           </div>
                         </div>
                       </div>

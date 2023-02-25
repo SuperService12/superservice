@@ -68,7 +68,6 @@ const ProfileScreen = () => {
               <div className="author-card-profile col">
                 <div className="author-card-avatar row-md-5" data-toggle="modal" data-target="#myModal">
                   {/* USER Dp */}
-                  {console.log(userInfo)}
                   {
                     userInfo.image ?
                       <img src={userInfo.image} alt={userInfo.name} /> :

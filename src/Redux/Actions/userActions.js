@@ -101,7 +101,6 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
     };
 
     const { data } = await SuperServer.get(`/api/users/${id}`, config);
-    console.log(data);
     dispatch({ type: USER_DETAILS_SUCCESS, payload: data });
   } catch (error) {
     const message =

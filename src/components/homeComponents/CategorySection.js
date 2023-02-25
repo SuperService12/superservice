@@ -43,7 +43,7 @@ const CategorySection = (props) => {
                 ) : (
                   <>
                     {categories.map((category) => (
-                      <Link to={`/category/${category.id}`}>
+                      <Link to={`/category/${category.id}`} key={category._id}>
                         <div
                           className="categoryCard"
                           key={category._id}
