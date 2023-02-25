@@ -9,9 +9,9 @@ const CategorySection = (props) => {
   const dispatch = useDispatch();
   const sideNav = useRef(null);
 
-  const catie = {
-    "Cleaning & Pest Control": [8, 9, 10],
-  }
+  // const catie = {
+  //   "Cleaning & Pest Control": [8, 9, 10],
+  // }
 
   const productList = useSelector((state) => state.categoryList);
   const { loading, error, categories } = productList;
