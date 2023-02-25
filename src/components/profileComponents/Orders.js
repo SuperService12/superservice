@@ -46,9 +46,9 @@ const Orders = (props) => {
                       style={{ borderBottom: "1px solid grey" }}
                     >
                       <td>
-                        <a href={`/order/${order._id}`} className="link" style={{ color: '#000', textDecoration: "none" }}>
+                        <Link to={`/order/${order._id}`} className="link" style={{ color: '#000', textDecoration: "none" }}>
                           <i class="fa fa-folder-open"></i>
-                        </a>
+                        </Link>
                       </td>
                       <td style={{ fontWeight: "600" }}>
                         {
