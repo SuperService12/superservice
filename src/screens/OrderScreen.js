@@ -26,10 +26,11 @@ const OrderScreen = ({ match }) => {
       return (Math.round(num * 100) / 100).toFixed(2);
     };
 
+    console.log(order);
     order.itemsPrice = addDecimals(
-      order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
+      order?.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
     );
-  }
+  } 
 
   useEffect(() => {
     dispatch(getOrderDetails(orderId));
@@ -171,7 +172,7 @@ const OrderScreen = ({ match }) => {
 
             <div className="row order-products justify-content-between">
               <div className="col-lg-8">
-                {order.orderItems.length === 0 ? (
+                {order?.orderItems.length === 0 ? (
                   <Message variant="alert-info mt-5">
                     Your order is empty
                   </Message>

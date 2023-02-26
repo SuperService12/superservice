@@ -35,16 +35,16 @@ const ProfileScreen = () => {
             <div className="modal-header">
               <h4 className="modal-title">Profile Photo</h4>
             </div>
-            <div className="modal-body">
+            <div className="modal-body px-4" style={{fontWeight: '200', fontSize: "1rem"}}>
               Here your photo changes completely
             </div>
-            <form>
-              <label className="form-label">Images</label>
-              <input className="form-control mt-3" type="file"
+            <form className="px-4">
+              <label className="form-label">Images:</label>
+              <input className="form-control mt-1 mb-2" type="file"
                 onChange={(e) => setImage(e.target.files[0])}
                 required />
             </form>
-            <div className="modal-footer">
+            <div className="modal-footer px-4">
               <button type="button" className="btn btn-default" data-dismiss="modal">Cancel</button>
               <button type="button" className="btn btn-dark" data-dismiss="modal"
                 onClick={() => {
@@ -71,7 +71,7 @@ const ProfileScreen = () => {
                   {
                     userInfo.image ?
                       <img src={userInfo.image} alt={userInfo.name} /> :
-                      <img src={"./images/user.png"} alt={userInfo.name} />
+                      <img src={"./user.png"} alt={userInfo.name} />
                   }
                 </div>
                 <div className="author-card-details row-md-7 mt-4">
