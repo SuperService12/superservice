@@ -11,6 +11,8 @@ const Register = ({ location, history }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [password1, setPassword1] = useState("");
+  const [Error, setError] = useState(false);
 
   const dispatch = useDispatch();
   const redirect = location.search ? location.search.split("=")[1] : "/";
@@ -26,6 +28,10 @@ const Register = ({ location, history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    if (password !== password1) {
+      setError(true);return
+    }
+    setError(false);
     dispatch(register(name, email, password));
   };
 
@@ -34,6 +40,7 @@ const Register = ({ location, history }) => {
       <Header />
       <div className="container d-flex flex-column justify-content-center align-items-center login-center">
         {error && <Message variant="alert-danger">{error}</Message>}
+        {Error && <Message variant="alert-danger">{"Password doesn't match"}</Message>}
         {loading && <Loading />}
 
         <form
@@ -57,6 +64,12 @@ const Register = ({ location, history }) => {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            value={password1}
+            onChange={(e) => setPassword1(e.target.value)}
           />
 
           <button type="submit">Register</button>

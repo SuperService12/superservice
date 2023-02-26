@@ -40,7 +40,8 @@ const OrderScreen = ({ match }) => {
       const { data: clientId } = await SuperServer.get("/api/config/paypal");
       const script = document.createElement("script");
       script.type = "text/javascript";
-      script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`;
+      script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}&currency=JPY`;
+      console.log('cli', clientId);
       script.async = true;
       script.onload = () => {
         setSdkReady(true);
@@ -237,7 +238,7 @@ const OrderScreen = ({ match }) => {
                     ) : (
                       <PayPalButton
                         amount={order.totalPrice}
-                        currency="INR"
+                        currency="JPY"
                         onSuccess={successPaymentHandler}
                         style={{
                           color: "black",

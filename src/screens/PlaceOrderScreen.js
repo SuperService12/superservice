@@ -35,7 +35,7 @@ const PlaceOrderScreen = ({ history }) => {
 
   useEffect(() => {
     if (success) {
-      history.push(`/order/₹{order._id}`);
+      history.push(`/order/${order._id}`);
       dispatch({ type: ORDER_CREATE_RESET });
     }
   }, [history, dispatch, success, order]);
@@ -127,7 +127,7 @@ const PlaceOrderScreen = ({ history }) => {
                       <img src={item.image} alt={item.name} />
                     </div>
                     <div className="col-md-5 col-6 d-flex align-items-center">
-                      <Link to={`/products/₹{item.product}`}>
+                      <Link to={`/products/${item.product}`}>
                         <h6>{item.name}</h6>
                       </Link>
                     </div>
