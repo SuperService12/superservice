@@ -26,7 +26,6 @@ const OrderScreen = ({ match }) => {
       return (Math.round(num * 100) / 100).toFixed(2);
     };
 
-    console.log(order);
     order.itemsPrice = addDecimals(
       order?.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
     );
@@ -42,7 +41,6 @@ const OrderScreen = ({ match }) => {
       const script = document.createElement("script");
       script.type = "text/javascript";
       script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}&currency=JPY`;
-      console.log('cli', clientId);
       script.async = true;
       script.onload = () => {
         setSdkReady(true);
@@ -238,7 +236,7 @@ const OrderScreen = ({ match }) => {
                       <Loading />
                     ) : (
                       <PayPalButton
-                        amount={order.totalPrice}
+                        amount={Math.round(order.totalPrice)}
                         currency="JPY"
                         onSuccess={successPaymentHandler}
                         style={{

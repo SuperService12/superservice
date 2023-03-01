@@ -8,6 +8,7 @@ import HomeScreen from "./screens/HomeScreen";
 import CategoryScreen from "./screens/CategoryScreen";
 import SingleProduct from "./screens/SingleProduct";
 import Login from "./screens/Login";
+import Verification from "./screens/Verification";
 import Register from "./screens/Register";
 import CartScreen from "./screens/CartScreen";
 import ShippingScreen from "./screens/ShippingScreen";
@@ -42,6 +43,7 @@ const App = () => {
           exact
         />
         <Route path="/products/:id" component={SingleProduct} />
+        <Route path="/verify" component={Verification} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <PrivateRouter path="/profile" component={ProfileScreen} />

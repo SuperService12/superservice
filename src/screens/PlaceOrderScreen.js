@@ -5,12 +5,14 @@ import { createOrder } from "../Redux/Actions/OrderActions";
 import { ORDER_CREATE_RESET } from "../Redux/Constants/OrderConstants";
 import Header from "./../components/Header";
 import Message from "./../components/LoadingError/Error";
+import Loading from "../components/LoadingError/Loading";
 
 const PlaceOrderScreen = ({ history }) => {
   window.scrollTo(0, 0);
 
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
+
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
@@ -31,7 +33,7 @@ const PlaceOrderScreen = ({ history }) => {
   ).toFixed(2);
 
   const orderCreate = useSelector((state) => state.orderCreate);
-  const { order, success, error } = orderCreate;
+  const { order, success, error, loading } = orderCreate;
 
   useEffect(() => {
     if (success) {
@@ -41,7 +43,6 @@ const PlaceOrderScreen = ({ history }) => {
   }, [history, dispatch, success, order]);
 
   const placeOrderHandler = () => {
-    console.log('place order', cart);
     dispatch(
       createOrder({
         orderItems: cart.cartItems,
@@ -58,6 +59,8 @@ const PlaceOrderScreen = ({ history }) => {
   return (
     <>
       <Header />
+      {error && <Message variant="alert-danger">Geolocation is not supported by this browser.</Message>}
+      {loading && <Loading />}
       <div className="container">
         <div className="row  order-detail">
           <div className="col-lg-4 col-sm-4 mb-lg-4 mb-5 mb-sm-0">
