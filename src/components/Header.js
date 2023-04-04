@@ -35,7 +35,7 @@ const Header = () => {
               {/* <p>+91 6357351241</p>
               <p>superserver@service.com</p> */}
               <h5>
-                SuperService.Com
+                SuperService
               </h5>
             </div>
             <div className=" col-12 col-lg-6 justify-content-center justify-content-lg-end d-flex align-items-center">
