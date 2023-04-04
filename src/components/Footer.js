@@ -13,7 +13,7 @@ const Footer = () => {
                 <i className="fas fa-map-marker-alt"></i>
                 <div className="cta-text">
                   <h4>Find Our Company</h4>
-                  <span>420p, los gages street, usa</span>
+                  <span>Jerusalem College Of Engineering,Chennai</span>
                 </div>
               </div>
             </div>
@@ -22,7 +22,7 @@ const Footer = () => {
                 <i className="fas fa-phone"></i>
                 <div className="cta-text">
                   <h4>Call us</h4>
-                  <span>63733212311</span>
+                  <span>8939672655</span>
                 </div>
               </div>
             </div>
@@ -31,7 +31,7 @@ const Footer = () => {
                 <i className="far fa-envelope-open"></i>
                 <div className="cta-text">
                   <h4>Mail us</h4>
-                  <span>superserver@service.com</span>
+                  <span>superservice125@gmail.com</span>
                 </div>
               </div>
             </div>
@@ -68,22 +68,22 @@ const Footer = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 mb-30">
               <div className="footer-widget">
                 <div className="footer-widget-heading">
-                  <h3>Useful Links</h3>
+                  <h3>Our Team Members</h3>
                 </div>
                 <ul>
                   <li>
-                    <Link to="">
-                      Home
+                    <Link to="https://www.linkedin.com/in/sivamalini-d-354a12249">
+                      Sivamalini
                     </Link>
                   </li>
                   <li>
-                    <Link to="">
-                      Service
+                    <Link to="https://www.linkedin.com/in/subhiksha-ilayaraja-518504254">
+                      Subhiksha 
                     </Link>
                   </li>
                   <li>
-                    <Link to="">
-                      Contact
+                    <Link to="https://www.linkedin.com/in/viyanney-maria-joseph-078b0a219/">
+                      Viyanney Maria Joseph
                     </Link>
                   </li>
                   <li>
