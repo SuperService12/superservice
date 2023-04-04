@@ -47,7 +47,7 @@ const Footer = () => {
                   </Link>
                 </div>
                 <div className="footer-text">
-                  <p>SuperService Company is Asia's largest online home services platform.  Launched in 2014, SuperService Company today operates in India, Singapore, the USA, the UAE and The Kingdom of Saudi Arabia. The platform helps customers book reliable & high quality services. </p>
+                  <p>SuperService,this project is done for all the people who needs help in their household works .</p>
                 </div>
                 <div className="footer-social-icon">
                   <Link to="">
